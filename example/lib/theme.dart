@@ -44,7 +44,7 @@ class LiveKitTheme {
             // backgroundColor: WidgetStateProperty.all<Color>(accentColor),
             backgroundColor: WidgetStateProperty.resolveWith((states) {
               if (states.contains(WidgetState.disabled)) {
-                return accentColor.withValues(alpha: 0.5);
+                return accentColor.withAlpha(125);
               }
               return accentColor;
             }),
@@ -59,13 +59,13 @@ class LiveKitTheme {
             if (states.contains(WidgetState.selected)) {
               return accentColor;
             }
-            return accentColor.withValues(alpha: 0.3);
+            return accentColor.withAlpha(75);
           }),
           thumbColor: WidgetStateProperty.resolveWith((states) {
             if (states.contains(WidgetState.selected)) {
               return Colors.white;
             }
-            return Colors.white.withValues(alpha: 0.3);
+            return Colors.white.withAlpha(75);
           }),
         ),
         dialogTheme: DialogTheme(
@@ -87,7 +87,7 @@ class LiveKitTheme {
             color: LKColors.lkBlue,
           ),
           hintStyle: TextStyle(
-            color: LKColors.lkBlue.withValues(alpha: 5),
+            color: LKColors.lkBlue.withAlpha(5),
           ),
           enabledBorder: InputBorder.none,
           focusedBorder: InputBorder.none,
